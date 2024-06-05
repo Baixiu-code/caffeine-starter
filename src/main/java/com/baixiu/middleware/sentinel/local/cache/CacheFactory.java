@@ -18,7 +18,7 @@ public class CacheFactory {
         //bean definition builder 
         BeanDefinitionBuilder builder=BeanDefinitionBuilder.genericBeanDefinition (CaffeineCache.class);
         builder.addPropertyValue ("caffeineProperties",caffeineProperties);
-        builder.getBeanDefinition().setBeanClassName(caffeineProperties.getCaffeineBeanName());
+        builder.getBeanDefinition().setBeanClassName("com.baixiu.middleware.sentinel.local.cache.CaffeineCache");
         ((DefaultListableBeanFactory)applicationContext.getAutowireCapableBeanFactory())
                 .registerBeanDefinition(caffeineProperties.getCaffeineBeanName(),builder.getBeanDefinition());
     }
