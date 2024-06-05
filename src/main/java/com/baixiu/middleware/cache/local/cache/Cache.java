@@ -1,4 +1,4 @@
-package com.baixiu.middleware.sentinel.local.cache;
+package com.baixiu.middleware.cache.local.cache;
 
 /**
  * base cache 

@@ -1,6 +1,6 @@
-package com.baixiu.middleware.sentinel.local.config;
+package com.baixiu.middleware.cache.local.config;
 
-import com.baixiu.middleware.sentinel.local.cache.CacheFactory;
+import com.baixiu.middleware.cache.local.cache.CacheFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(value = CaffeineBeanProperties.class)
 @ComponentScan("com.baixiu.middleware.sentinel.local")
 public class CaffeineAutoConfig implements ApplicationContextAware {
-    
+
     @Autowired
     private CaffeineBeanProperties caffeineBeanProperties;
     @Autowired

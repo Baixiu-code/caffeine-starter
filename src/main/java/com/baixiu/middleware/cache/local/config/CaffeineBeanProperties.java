@@ -1,4 +1,4 @@
-package com.baixiu.middleware.sentinel.local.config;
+package com.baixiu.middleware.cache.local.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import java.util.List;

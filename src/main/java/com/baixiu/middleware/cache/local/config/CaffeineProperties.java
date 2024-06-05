@@ -1,4 +1,4 @@
-package com.baixiu.middleware.sentinel.local.config;
+package com.baixiu.middleware.cache.local.config;
 
 /**
  * cache properties
@@ -47,6 +47,19 @@ public class CaffeineProperties {
      * 过期时间 毫秒
      */
     private Integer expireTime = 500;
+
+    /**
+     * load cache 需要显式声明 cache loader
+     */
+    private String cacheLoaderName;
+
+    public String getCacheLoaderName() {
+        return cacheLoaderName;
+    }
+
+    public void setCacheLoaderName(String cacheLoaderName) {
+        this.cacheLoaderName = cacheLoaderName;
+    }
 
     public Integer getRefreshClientFlag() {
         return refreshClientFlag;

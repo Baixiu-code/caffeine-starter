@@ -1,14 +1,15 @@
-package com.baixiu.middleware.sentinel.local.cache;
+package com.baixiu.middleware.cache.local.cache;
 
-import com.baixiu.middleware.sentinel.local.config.CaffeineProperties;
+import com.baixiu.middleware.cache.local.config.CaffeineProperties;
 import com.github.benmanes.caffeine.cache.*;
+
 import java.util.concurrent.TimeUnit;
 
 /**
  * @author baixiu
  * @date 创建时间 2024/6/4 3:30 PM
  */
-public class CaffeineCache <K,V> implements Cache{
+public class CaffeineCache <K,V> implements Cache {
 
     /**
      * loading cache .get 为 null .会自动调用 cache loader 
@@ -51,7 +52,7 @@ public class CaffeineCache <K,V> implements Cache{
         if(caffeineProperties==null){
             throw new RuntimeException ("cache bean config is null");
         }
-        if(loadingCache==null && caffeineProperties.getRefreshClientFlag()==0){
+        if(loadingCache==null || caffeineProperties.getRefreshClientFlag()==1){
             
             Caffeine<Object, Object> caffeine=Caffeine.newBuilder ().initialCapacity (caffeineProperties.getInitialCapacity ())
                     .maximumSize (caffeineProperties.getMaximumSize ());
